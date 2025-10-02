@@ -12,7 +12,8 @@ API REST para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobr
 - [Uso](#uso)  
 - [Endpoints](#endpoints)  
 - [Autenticación](#autenticación)  
-- [Errores comunes](#errores-comunes)  
+- [Errores comunes](#errores-comunes)
+- [Documentacion Suagger](#suagger)  
 - [Contribuciones](#contribuciones)  
 - [Licencia](#licencia)  
 - [Contacto](#contacto)  
@@ -38,12 +39,12 @@ Esta API permite gestionar un catálogo de productos mediante operaciones CRUD: 
 
 1. Clona el repositorio:  
 ```bash
-git clone https://github.com/tu_usuario/api-rest-productos.git
+git clone https://github.com/Godie84/api_rest_products.git
 
 
 Entra en el directorio:
 
-cd api-rest-productos
+cd api_rest_products
 
 
 Instala las dependencias con Composer:
@@ -97,12 +98,14 @@ Ejemplo response (200):
     "name": "Producto 1",
     "description": "Descripción del producto 1",
     "price": 100.00
+    "stock": 1
   },
   {
     "id": 2,
     "name": "Producto 2",
     "description": "Descripción del producto 2",
     "price": 150.00
+    "stock": 2
   }
 ]
 
@@ -122,6 +125,7 @@ Body (JSON):
   "name": "Nombre del producto",
   "description": "Descripción",
   "price": 100.00
+  "stock": 2
 }
 
 
@@ -140,6 +144,7 @@ Ejemplo response (201):
   "name": "Nuevo producto",
   "description": "Descripción",
   "price": 100.00
+  "stock": 2
 }
 
 Obtener producto por ID
@@ -168,6 +173,7 @@ Ejemplo response (200):
   "name": "Producto 1",
   "description": "Descripción del producto 1",
   "price": 100.00
+  "stock": 2
 }
 
 Actualizar producto
@@ -190,6 +196,7 @@ Body (JSON):
   "name": "Nombre actualizado",
   "description": "Descripción actualizada",
   "price": 120.00
+  "stock": 2
 }
 
 
@@ -198,7 +205,7 @@ Ejemplo request:
 curl -X PUT http://127.0.0.1:8000/api/products/1 \
 -H "Authorization: Bearer {token}" \
 -H "Content-Type: application/json" \
--d '{"name":"Producto actualizado", "description":"Nueva descripción", "price":120.00}'
+-d '{"name":"Producto actualizado", "description":"Nueva descripción", "price":120.00, "stock":1}'
 
 
 Ejemplo response (200):
@@ -208,6 +215,7 @@ Ejemplo response (200):
   "name": "Producto actualizado",
   "description": "Nueva descripción",
   "price": 120.00
+  "stock": 2
 }
 
 Eliminar producto
@@ -246,12 +254,10 @@ Código	Mensaje	Descripción
 401	Unauthorized	Token inválido o no enviado
 404	Not Found	Producto no encontrado
 500	Internal Server Error	Error inesperado en el servidor
-Contribuciones
 
-
-
-
-
+```
+## suagger
+http://localhost:8000/api/documentation#/
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
@@ -316,5 +322,6 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-#   a p i _ r e s t _ p r o d u c t s  
+#   a p i _ r e s t _ p r o d u c t s 
+ 
  
